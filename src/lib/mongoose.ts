@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
-let isConnected = false; // check if mongoose is connected
+let isConnected = false;
 
 export default async function connectToDB() {
-  mongoose.set("strictQuery", true);
 
   if (!process.env.MONGODB_URI) {
     return console.log("MongoDB URI not found");
@@ -16,9 +15,7 @@ export default async function connectToDB() {
 
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-
     isConnected = true;
-
     console.log("Database connected");
   } catch (error) {
     console.log("Error connecting to database: ", error);

@@ -1,11 +1,26 @@
-import Image from "next/image";
+"use client";
 
-export default async function Home() {
+import HomeSearch from './components/SearchBar'
+import Navbar from './components/Navbar'
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
 
-  
-    </main>
-  );
+const Homepage = () => {
+
+    return (
+        <div>
+            <Navbar/>
+            <div className="home-wrap">
+                <div className="spacer"/>
+                <div className="title">
+                    <h1>U-TRITION</h1>
+                </div>
+                <div className="subtitle">
+                    Getting a hold on what you consume
+                </div>
+                <HomeSearch />
+            </div>
+        </div>
+    )
 }
+
+export default Homepage
